@@ -11,6 +11,27 @@
  *  with a message that the entire file has been displayed. The program should do this by seeking to the end of the file
  *  and then backing up to the tenth line from the end.
  *
+ *  ALGORITHM for main:
+ *      1.Create the string to hold the file name
+ *      2. Prompt the user for the name of the text file.
+ *      3. get user input
+ *      4. Create the filestream oject
+ *      5. Open the file
+ *      6. Check for an error opening the file.
+ *      7. call getline until the eof is reached, incrementing numLines.
+ *      8. IF numLines < 10
+ *          a. Tell the user there are less than 10 liness
+ *          b. print the file contents
+ *          c. seek to the beginning
+ *          d. use getline to print every line of the file.
+ *        ` e. return out.
+ *      9. ELSE seek to the beginning of the file
+ *          a. read forward one line (numLines - 10) times to get
+ *              to the desired line.
+ *          b. print all remaining lines
+ *          c.  return out.
+ *
+ *
  */
 #include <iostream>
 #include <fstream>
@@ -28,7 +49,7 @@ int main() {
     // user input
     cin >> fileName;
 
-    // create infile stream objes
+    // create infile stream object
     ifstream file;
 
     // open the file
